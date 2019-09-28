@@ -4,11 +4,13 @@ FROM debian:stretch as builder
 ENV FLB_MAJOR 1
 ENV FLB_MINOR 2
 ENV FLB_PATCH 2
-ENV FLB_VERSION 1.2.2
+#ENV FLB_VERSION 1.2.2
+ENV FLB_VERSION master
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV FLB_TARBALL http://github.com/fluent/fluent-bit/archive/v$FLB_VERSION.zip
+#ENV FLB_TARBALL http://github.com/fluent/fluent-bit/archive/v$FLB_VERSION.zip
+ENV FLB_TARBALL https://github.com/fluent/fluent-bit/archive/master.zip
 RUN mkdir -p /fluent-bit/bin /fluent-bit/etc /fluent-bit/log /tmp/fluent-bit-master/
 
 RUN apt-get update && \
